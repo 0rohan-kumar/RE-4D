@@ -1,0 +1,15 @@
+{
+  "name": "xx142-b2-exe",
+  "version": "1.0.0",
+  "description": "xx142-b2-exe bust em` viruses!",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Rohan",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "~1.6.2",
+    "electron-packager": "^15.4.0"
+  }
+}

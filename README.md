@@ -2,114 +2,246 @@
 
 > *Recursive Execution — 4th Dimension*
 
-A cyberpunk maze game rendered in real-time 3D via WebGL. You are an AI virus with **13 seconds** to navigate hostile alien architecture, trigger pressure switches, and destroy the memory core — or die trying. Each death leaves behind a **ghost** that replays your previous run, turning failure into a strategic tool.
+A puzzle game built with plain WebGL and JavaScript.
 
-🎮 **[Play in Browser](https://re-4d.vercel.app)**
+You play as **RE-4D**, an AI virus with only **13 seconds** before the alien antivirus wipes you out. Every failed run becomes part of the next one, leaving behind a ghost that perfectly replays your previous attempt. The entire game revolves around using those ghosts to solve puzzles that would be impossible alone.
 
----
-
-## 📜 Lore
-
-> *The year is 2413.* Humanity has been enslaved by an alien race for more than two centuries. In a last act of defiance, the remnants of the human resistance engineered **RE-4D** — an AI weaponized virus designed to infiltrate the alien network, deactivate all power generators and weapon systems, and destroy the main memory core.
-
-The alien antivirus will detect and delete you after **13 seconds**. But a file is never truly deleted. Use the **execution backtrace** from your previous attempts to break in.
+🎮 **Play in your browser:** https://re-4d.vercel.app
 
 ---
 
-## 🎮 Controls
-
-| Input | Action |
-|---|---|
-| `W A S D` / `↑ ← ↓ →` | Move |
-| `Backspace` | `kill -9 RE-4D` — self-terminate, spawn a ghost |
-| Swipe (mobile) | Move in swipe direction |
+> [!NOTE]
+> **RE-4D is still a work in progress.**
+>
+> This browser version exists as a prototype to test the core gameplay mechanic. The long-term goal is to rebuild the project in Unity with more mechanics, a longer campaign, improved visuals, and support for community-made levels.
 
 ---
 
-## 👻 Ghost System
+## Story
 
-Every input you make is recorded. When you die (timer or `Backspace`), a **ghost** is spawned that perfectly replays your movements. Ghosts can activate pressure switches, letting you hold doors open that would be otherwise unreachable alone.
+It's the year **2413**.
 
-- Max **4 active ghosts** at a time
-- Ghosts can trigger and release pressure switches
-- Older ghosts are replaced when the limit is exceeded — plan your deaths wisely
+Humanity has been enslaved for over two centuries. As a final act of resistance, scientists created **RE-4D**—an AI virus designed to infiltrate the alien network, disable their defenses, and destroy the central memory core.
+
+The problem?
+
+The alien antivirus detects and deletes you after **13 seconds**.
+
+Fortunately, deleted code leaves traces.
+
+Every failed attempt becomes another execution backtrace you can use on the next run.
 
 ---
 
-## 🗺️ Levels
+## Gameplay
 
-| # | Name | Switches | Doors | Difficulty |
-|---|---|---|---|---|
-| 0 | The Corridor | 1× Momentary | 1 | Tutorial |
-| 1 | The Fork | 2× Momentary | 2 | Easy |
-| 2 | The Grid | 4× Momentary, 1× Single | 4 | Medium |
-| 3 | The Labyrinth | 1× Momentary, 1× Toggle | 2 | Medium |
-| 4 | The Shaft | 1× Single, 2× Momentary | 3 | Hard |
-| 5 | The Nexus | 5× Momentary | 4 | Hard |
-| 6 | The Spiral | 3× Momentary | 3 | Expert |
-| 7 | **The Core** | 2× Momentary | 12 | Final |
+Every movement you make is recorded.
+
+When you die—either by running out of time or pressing **Backspace**—that recording comes back as a ghost, replaying your exact inputs.
+
+Ghosts can hold pressure switches, open doors, and interact with the level while you explore somewhere else.
+
+Sometimes the solution isn't surviving.
+
+Sometimes it's dying in the right place.
+
+### Ghost Rules
+
+* Maximum **4 active ghosts**
+* New ghosts replace the oldest recording
+* Every ghost can interact with switches just like the player
+
+---
+
+## Controls
+
+| Key                   | Action          |
+| --------------------- | --------------- |
+| **WASD / Arrow Keys** | Move            |
+| **Backspace**         | Self-destruct   |
+| **Swipe**             | Mobile controls |
+
+---
+
+## Levels
+
+|  # | Name          | Mechanics             |
+| -: | ------------- | --------------------- |
+|  0 | The Corridor  | Tutorial              |
+|  1 | The Fork      | Two switches          |
+|  2 | The Grid      | Multiple switch types |
+|  3 | The Labyrinth | Toggle switches       |
+|  4 | The Shaft     | Mixed mechanics       |
+|  5 | The Nexus     | Larger layouts        |
+|  6 | The Spiral    | Timing-heavy          |
+|  7 | The Core      | Final level           |
 
 ### Switch Types
 
-- **Momentary** — Active while stepped on; deactivates when you leave
-- **Single** — One-time activation; locked permanently after triggered
-- **Toggle** — Flips state on each contact
+* **Momentary** — Active only while something stands on it.
+* **Single** — Can only be activated once.
+* **Toggle** — Changes state every time it's touched.
 
 ---
 
-## 🛠 Tech Stack
+## Inspiration
 
-| Layer | Technology |
-|---|---|
-| Rendering | WebGL (custom vertex + fragment shaders) |
-| Game Logic | Vanilla JavaScript (zero dependencies) |
-| Audio | [jsfxr](https://github.com/mneubrand/jsfxr) — procedural synthesis, no audio files |
-| Desktop | Electron v1.6 |
-| Deployment | Vercel (static) |
+One of the biggest inspirations behind RE-4D was **Portal**.
 
-### Rendering Highlights
+Portal showed that an entire puzzle game could be built around a single mechanic. Instead of constantly introducing new abilities, every level explored another possibility using the same core idea.
 
-- **Dynamic player spotlight** — cone of light that follows the player
-- **Hex-grid floor shader** — animated hexagonal pattern generated in the fragment shader
-- **Depth fog** — geometry fades to black based on vertical distance
-- **Camera interpolation** — smooth quadratic follow with slight rotation
-- **Fade transitions** — level transitions via opacity on the projection matrix
+RE-4D follows a similar approach.
+
+The only mechanic is that every failed attempt becomes another ghost.
+
+Everything else is built around finding new ways to use that one rule.
 
 ---
 
-## 📂 Project Structure
+## Why WebGL?
 
-```
+This isn't intended to be the final version of RE-4D.
+
+I chose WebGL because it let me prototype ideas quickly without committing to a full game engine. The browser version is mainly for testing mechanics, level design, and getting feedback.
+
+Once the gameplay feels right, I plan to rebuild everything in Unity as a larger standalone game.
+
+---
+
+## Built With
+
+| Part          | Technology                 |
+| ------------- | -------------------------- |
+| Rendering     | Raw WebGL + custom shaders |
+| Gameplay      | Vanilla JavaScript         |
+| Audio         | jsfxr                      |
+| Desktop Build | Electron                   |
+| Hosting       | Vercel                     |
+
+Some things I experimented with while building it:
+
+* Animated hex-grid floor shader
+* Player spotlight
+* Distance fog
+* Camera interpolation
+* Fade transitions
+* Procedural sound generation
+
+No game engine was used.
+
+---
+
+## Development Log
+
+### Day 1 — Project Skeleton
+
+Set up the Node.js project, created an empty `index.html`, and started experimenting with WebGL.
+
+The original working title was `xx142-b2.exe`.
+
+### Day 2 — UI & HUD
+
+Built the terminal-inspired interface, intro sequence, and HUD.
+
+The game itself barely existed, but I wanted the atmosphere to be there from the beginning.
+
+### Day 3 — WebGL Renderer
+
+Implemented the rendering pipeline from scratch.
+
+Added:
+
+* Custom shaders
+* Animated hex floor
+* Depth fog
+* Camera interpolation
+
+Seeing the first 3D scene render was probably the biggest milestone of the project.
+
+### Day 4 — Gameplay
+
+Implemented:
+
+* Collision detection
+* Level loading
+* Doors
+* Pressure switches
+* The 13-second timer
+* Ghost recording and playback
+
+Also integrated **jsfxr** to generate all sound effects procedurally.
+
+This was the first day it actually felt like a game.
+
+### Day 5 — Desktop Build
+
+Wrapped the browser version with Electron so it could run as a native Windows application.
+
+### Day 6 — First Playable Build
+
+Renamed the project from `xx142-b2.exe` to **RE-4D**.
+
+Cleaned up the code, wrote documentation, deployed it to Vercel, and published the first playable version.
+
+---
+
+## Roadmap
+
+The next major feature is a built-in level editor.
+
+The goal is to let players create their own puzzles, publish them using a seed ID, and compete for the fastest completion times.
+
+Planned features:
+
+* Visual level editor
+* Shareable level IDs
+* Community puzzle browser
+* Online leaderboards
+* Ghost replays from the fastest players
+
+---
+
+## Project Structure
+
+```text
 RE-4D/
-├── index.html              # Entire game (HTML + inlined JS)
-├── main.js                 # Electron entry point
-├── package.json            # Node/Electron config
-├── vercel.json             # Vercel deployment config
+├── index.html      # Rendering + gameplay
+├── main.js         # Electron entry point
+├── package.json
+├── vercel.json
 ├── .gitignore
 └── PACKAGING/
-    └── xx142-b2.exe-win32-ia32/   # Windows x86 desktop build
 ```
+
+Most of the game currently lives inside `index.html`.
+
+It started as a quick experiment and slowly grew into the prototype you're playing now.
 
 ---
 
-## 🚀 Getting Started
+## Running Locally
 
-### Play in Browser
-Open `index.html` in any modern browser with WebGL support, or visit the live deployment.
-
-### Run with Electron
+Clone the repository and either open `index.html` in any browser with WebGL support, or run the Electron version.
 
 ```bash
 npm install
 npm start
 ```
 
-### Package for Windows
+To package the Windows build:
 
 ```bash
 npx electron-packager . RE-4D --platform=win32 --arch=ia32
 ```
 
+---
 
+## Why I Made This
 
+I wanted to see how far a puzzle game could go using a single mechanic.
 
+Instead of giving the player more abilities, every new level asks them to think differently about the same rule:
+
+**Every failure becomes another tool.**
+
+This project is my first attempt at exploring that idea.

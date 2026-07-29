@@ -1,7 +1,7 @@
 {
-  "name": "xx142-b2-exe",
+  "name": "re-4d",
   "version": "1.0.0",
-  "description": "xx142-b2-exe bust em` viruses!",
+  "description": "RE-4D bust em` viruses!",
   "main": "main.js",
   "scripts": {
     "start": "electron ."

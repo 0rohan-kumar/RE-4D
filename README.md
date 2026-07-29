@@ -1,10 +1,14 @@
 # RE-4D
-
+> category : solo indie game
 > *Recursive Execution — 4th Dimension*
 
-A puzzle game built with plain WebGL and JavaScript.
+A puzzle game based on the mechanics of time manipulation.
+We have studied that apart from the 3 dimensions we can access there is the 4th dimension TIME.
+what if we used time to our advantage to do tasks normally impossible?
 
-You play as **RE-4D**, an AI virus with only **13 seconds** before the alien antivirus wipes you out. Every failed run becomes part of the next one, leaving behind a ghost that perfectly replays your previous attempt. The entire game revolves around using those ghosts to solve puzzles that would be impossible alone.
+Whenever a file is deleted..its trace remains
+
+You play as **RE-4D**, an implanted virus with only **13 seconds** before the alien antivirus wipes you out. Every failed run becomes part of the next one, leaving behind a ghost that replays your previous attempt. The entire game revolves around using those ghosts to solve puzzles that would be impossible alone.
 
 🎮 **Play in your browser:** https://re-4d.vercel.app
 
@@ -17,7 +21,7 @@ You play as **RE-4D**, an AI virus with only **13 seconds** before the alien ant
 
 ---
 
-## Story
+## Story/Lore (1st draft)
 
 It's the year **2413**.
 
@@ -92,7 +96,7 @@ Portal showed that an entire puzzle game could be built around a single mechanic
 
 RE-4D follows a similar approach.
 
-The only mechanic is that every failed attempt becomes another ghost.
+The only mechanic is that every failed attempt becomes another ghost/echo.
 
 Everything else is built around finding new ways to use that one rule.
 
@@ -235,6 +239,8 @@ npx electron-packager . RE-4D --platform=win32 --arch=ia32
 ```
 
 ---
+OR
+**Play in your browser:** https://re-4d.vercel.app
 
 ## Why I Made This
 
@@ -242,6 +248,11 @@ I wanted to see how far a puzzle game could go using a single mechanic.
 
 Instead of giving the player more abilities, every new level asks them to think differently about the same rule:
 
-**Every failure becomes another tool.**
+**You are your own team**
 
 This project is my first attempt at exploring that idea.
+
+with love by rohan(https://roh1.vercel.app/)
+
+# AI usage disclaimer
+the code inst ai generated however documentation..formatting and debugging was assisted by AI 

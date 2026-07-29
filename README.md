@@ -1,4 +1,3 @@
-````md
 # RE-4D
 
 > **Category:** Solo Indie Game
@@ -91,7 +90,7 @@ There are instances when it dies in the correct place.
 
 # Inspiration
 
-A major source of inspiration for **Portal** was RE-4D.
+A major source of inspiration for RE-4D was portal by valve
 
 Portal proved that a complete puzzle game could be constructed on the basis of a single mechanic; rather than constantly adding new abilities, each level looked at a different possibility based on that same fundamental concept.
 

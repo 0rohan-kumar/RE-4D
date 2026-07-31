@@ -1,24 +1,32 @@
 # RE-4D
+![
 
-> **Category:** Solo Indie Game
+Status](https://img.shields.io/badge/Status-Prototype-orange)
+![Platform](https://img.shields.io/badge/Platform-WebGL-blue)
+![Made With](https://img.shields.io/badge/Made%20With-JavaScript-yellow)
+![License](https://img.shields.io/badge/License-MIT-green) 
+> Category: Indie Game
 >
-> *Recursive Execution - 4th Dimension*
+> Recursive Execution - 4th Dimension
+A puzzle game built around one mechanic: time.
 
-A puzzle game made use of the mechanics of time manipulation. We have found that, in addition to the three dimensions that we can access, there is the fourth dimension, TIME. What if we used time to our advantage in order to carry out tasks which are normally impossible?
+We've always been taught that there are three spatial dimensions, but what if we could use the fourth dimension, **time**, as a gameplay mechanic instead of just something that passes?
+THAT is the key mechanic time manipulation
 
-At every instance when a file is deleted, traces of it still remain.
+You play as **RE-4D**, an experimental virus sent into an alien network. You only have **13 seconds** before the antivirus deletes you.
 
-You take on the role of **RE-4D**, a virus that has been implanted and have only **13 seconds** before the alien antivirus erases you. Each time you fail, that failure becomes part of the following attempt and leaves a ghost which replays your earlier try. The whole game is based on using these ghosts to solve puzzles that could not be solved by yourself.
+Luckily, deleted files leave traces behind.
 
-🎮 **Play in your browser:** https://re-4d.vercel.app
+Every time you fail, your previous attempt comes back as a ghost and repeats everything you did. Those ghosts become the key to solving puzzles that would be impossible alone.
+
+**Play in your browser:** https://re-4d.vercel.app
 
 ---
 
 > [!NOTE]
 > **RE-4D is still being developed.**
 >
-> This version of the browser is being used as a prototype in order to test the fundamental gameplay mechanism. The aim over the long term is to redevelop the project using Unity, adding more mechanics, a longer campaign, better visuals, and support for levels created by the community.
-
+> This browser version is just a prototype. I wanted to see if the core mechanic was actually fun before rebuilding everything in Unity.
 ---
 
 # Story / Lore (1st Draft)
@@ -47,8 +55,9 @@ It is possible for ghosts to operate pressure switches, open doors, and interact
 
 The answer doesn't have to be to survive.
 
-There are instances when it dies in the correct place.
+Sometimes the correct move is to let yourself get deleted.
 
+The game isn't about surviving every run. It's about leaving ghosts exactly where you need them.
 ## Ghost Rules
 
 - Maximum **4 active ghosts**
@@ -91,15 +100,11 @@ There are instances when it dies in the correct place.
 # Inspiration
 
 A major source of inspiration for RE-4D was portal by valve
+Portal was probably my biggest inspiration.
 
-Portal proved that a complete puzzle game could be constructed on the basis of a single mechanic; rather than constantly adding new abilities, each level looked at a different possibility based on that same fundamental concept.
+I liked how Portal kept introducing new puzzles using the same core mechanic instead of constantly giving the player new abilities.
 
-RE-4D takes a comparable approach.
-
-The only thing is that each time an attempt fails it becomes another ghost/echo.
-
-All the rest consists of finding new ways to apply that single rule.
-
+I wanted to try doing something similar, except the mechanic is your own previous attempts.
 ---
 
 # Why WebGL?
@@ -108,7 +113,7 @@ This is not meant to be the final version of RE-4D.
 
 I used WebGL since it allowed me to quickly prototype ideas without having to commit to a full game engine; the browser version is primarily intended for testing mechanics, level design, and obtaining feedback.
 
-When the way the game works is satisfactory, my intention will be to redevelop all of it in Unity as a bigger standalone game.
+If the prototype works well, I'll rebuild the game in Unity with better graphics, more mechanics and a proper campaign.
 
 ---
 
@@ -135,69 +140,7 @@ No game engine was used.
 
 ---
 
-# Dev Log
 
-## Day 1 - Project Skeleton
-
-I set up the Node.js project, made an empty `index.html` file, and then began experimenting with WebGL.
-
-The first working title was `xx142-b2.exe`.
-
----
-
-## Day 2 - UI & HUD
-
-Constructed the terminal-style interface, the intro sequence, and the HUD.
-
-Although the game didn't really exist, I still wanted the atmosphere to be present right from the start.
-
----
-
-## Day 3 - WebGL Renderer
-
-Built the rendering pipeline from the ground up.
-
-Added:
-
-- Custom shaders
-- Animated hex floor
-- Depth fog
-- Camera interpolation
-
-The first 3D scene render probably represented the project's greatest achievement.
-
----
-
-## Day 4 - Gameplay
-
-Implemented:
-
-- Collision detection
-- Level loading
-- Doors
-- Pressure switches
-- The 13-second timer
-- Ghost recording and playback
-
-I've also incorporated jsfxr in order to generate all the sound effects procedurally.
-
-It was on the first day that it actually started to feel like a game.
-
----
-
-## Day 5 - Desktop Build
-
-I wrapped the browser version using Electron so that it could function as a native Windows application.
-
----
-
-## Day 6 - First Playable Build
-
-We renamed the project from `xx142-b2.exe` to **RE-4D**.
-
-I sorted out the code, prepared the documentation, deployed it to Vercel, and released the first playable version.
-
----
 
 # Roadmap
 
@@ -265,20 +208,17 @@ Instead of giving the player more abilities, every new level asks them to think 
 This is the first time I have tried to look into that idea.
 
 ---
-
-## With love,
-
 **Rohan**
 
 https://roh1.vercel.app/
 
 ---
 
-# AI Usage Disclaimer
+## AI Usage
 
-The code was produced by me.
+The gameplay, programming, shaders, level design and overall game were created by me.
 
-AI was used only for assistance with formatting, debugging, and brainstorming.
+AI was only used occasionally to help debug code and answer programming questions.
 
 ```
 ```

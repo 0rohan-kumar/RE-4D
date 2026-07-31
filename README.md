@@ -278,7 +278,7 @@ https://roh1.vercel.app/
 
 The code was produced by me.
 
-AI was used only for assistance with documentation, formatting, debugging, and brainstorming.
+AI was used only for assistance with formatting, debugging, and brainstorming.
 
 ```
 ```

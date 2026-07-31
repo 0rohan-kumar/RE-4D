@@ -1,7 +1,5 @@
 # RE-4D
-![
-
-Status](https://img.shields.io/badge/Status-Prototype-orange)
+![Status](https://img.shields.io/badge/Status-Prototype-orange)
 ![Platform](https://img.shields.io/badge/Platform-WebGL-blue)
 ![Made With](https://img.shields.io/badge/Made%20With-JavaScript-yellow)
 ![License](https://img.shields.io/badge/License-MIT-green) 
